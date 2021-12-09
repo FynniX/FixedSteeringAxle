@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="61">
+    <author>Fynn Haupt</author>
+    <version>1.0.0.0</version>
+
+    <title>
+        <en>Lock Steering Axle</en>
+        <de>Lenkachse sperren</de>
+    </title>
+
+    <description>
+        <en>
+        <![CDATA[With this mod you can lock and unlock your steering axle/drawbar]]>
+        </en>
+        <de>
+        <![CDATA[Mit dieser Mod kannst du deine Lenkachse/-deichsel sperren und entsperren]]>
+        </de>
+    </description>
+
+    <iconFilename>icon.dds</iconFilename>
+
+    <multiplayer supported="true"/>
+
+    <l10n filenamePrefix="i18n/locale"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="src/main.lua"/>
+    </extraSourceFiles>
+
+    <actions>
+        <action name="TOGGLE_LOCK_STEERING_AXLE" category="VEHICLE" ignoreComboMask="FALSE"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="TOGGLE_LOCK_STEERING_AXLE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_comma" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="GAMEPAD_DEFAULT" input="BUTTON_5 BUTTON_18" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+    </inputBinding>
+</modDesc>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <translationContributors>Fynn Haupt</translationContributors>
+    <texts>
+        <text name="LOCK_STEERING_AXLE" text="Lenkachse sperren"/>
+        <text name="UNLOCK_STEERING_AXLE" text="Lenkachse entsperren"/>
+        <text name="LOCK_STEERING_DRAWBAR" text="Lenkdeichsel sperren"/>
+        <text name="UNLOCK_STEERING_DRAWBAR" text="Lenkdeichsel entsperren"/>
+        <text name="INPUT_TOGGLE_LOCK_STEERING_AXLE" text="Lenkachse/-deichsel ent-/sperren"/>
+    </texts>
+</l10n>
