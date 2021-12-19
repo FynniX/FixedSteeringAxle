@@ -3,6 +3,8 @@ local mod_directory = g_currentModDirectory or ""
 ---@type string name of the mod.
 local mod_name = g_currentModName or "unknown"
 
+source(Utils.getFilename("src/LockSteeringAxleEvent.lua", mod_directory))
+
 RegisterLockSteeringAxle = {}
 RegisterLockSteeringAxle.loaded = false
 RegisterLockSteeringAxle.debug = false

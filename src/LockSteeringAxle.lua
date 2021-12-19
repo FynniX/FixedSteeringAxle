@@ -105,20 +105,24 @@ end
 
 function LockSteeringAxle:onWriteStream(streamId, connection)
 	if not connection:getIsServer() then
-		local spec = self:getSpec()
-		streamWriteBool(streamId, spec.isLocked);
+        local spec = self:getSpec();
+
+        if spec.hasSteeringAxle then
+            streamWriteBool(spec.isLocked);
+        end
 	end;
 end;
 
 function LockSteeringAxle:onReadStream(streamId, connection)
 	if connection:getIsServer() then
-		local spec = self:getSpec()
-		
-		spec.isLocked = streamReadBool(streamId);
-		self:setSteeringAxle(spec.isLocked, true);
+        local spec = self:getSpec();
+
+        if spec.hasSteeringAxle then
+            spec.isLocked = Utils.getNoNil(streamReadBool(streamId), false);
+            self:setSteeringAxle(spec.isLocked, true);
+        end
 	end;
 end;
-
 
 function LockSteeringAxle:saveToXMLFile(xmlFile, key)
     local spec = self:getSpec();
@@ -130,7 +134,7 @@ end
 
 function LockSteeringAxle.ToggleSteeringAxle(self)
     local spec = self:getSpec()
-    self:setSteeringAxle(not spec.isLocked, false)
+    self:setSteeringAxle(not spec.isLocked, false);
 end
 
 function LockSteeringAxle:setSteeringAxle(isLocked, noEventSend)
@@ -138,58 +142,7 @@ function LockSteeringAxle:setSteeringAxle(isLocked, noEventSend)
 	
 	if isLocked ~= spec.isLocked then
 		spec.isLocked = isLocked;
-		
-		if noEventSend == nil or noEventSend == false then
-			if g_server ~= nil then
-				g_server:broadcastEvent(LockSteeringAxleEvent:new(self, isLocked), nil, nil, self);
-			else
-				g_client:getServerConnection():sendEvent(LockSteeringAxleEvent:new(self, isLocked));
-			end;
-		end;
 	end;
-end;
 
---MP Stuff
-
-LockSteeringAxleEvent = {};
-LockSteeringAxleEvent_mt = Class(LockSteeringAxleEvent, Event);
-
-InitEventClass(LockSteeringAxleEvent, "LockSteeringAxleEvent");
-
-function LockSteeringAxleEvent:emptyNew()
-	local self = Event:new(LockSteeringAxleEvent_mt);
-    
-	return self;
-end;
-
-function LockSteeringAxleEvent:new(trailer, isLocked)
-	local self = LockSteeringAxleEvent:emptyNew();
-	
-	self.trailer = trailer;
-	self.isLocked = isLocked;
-	
-	return self;
-end;
-
-function LockSteeringAxleEvent:readStream(streamId, connection)
-	self.trailer = NetworkUtil.readNodeObject(streamId);
-	self.isLocked = streamReadBool(streamId);
-	
-    self:run(connection);
-end;
-
-function LockSteeringAxleEvent:writeStream(streamId, connection)
-	NetworkUtil.writeNodeObject(streamId, self.trailer);
-	
-	streamWriteBool(streamId, self.isLocked);
-end;
-
-function LockSteeringAxleEvent:run(connection)
-	if not connection:getIsServer() then
-		g_server:broadcastEvent(LockSteeringAxleEvent:new(self.trailer, self.isLocked), nil, connection, self.trailer);
-	end;
-	
-    if self.trailer ~= nil then
-        self.trailer:setSteeringAxle(self.isLocked, true);
-	end;
+    LockSteeringAxleEvent.sendEvent(self, isLocked, noEventSend);
 end;
