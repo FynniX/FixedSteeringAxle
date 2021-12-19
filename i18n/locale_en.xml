@@ -4,8 +4,6 @@
     <texts>
         <text name="LOCK_STEERING_AXLE" text="Lock Steering Axle"/>
         <text name="UNLOCK_STEERING_AXLE" text="Unlock Steering Axle"/>
-        <text name="LOCK_STEERING_DRAWBAR" text="Lock Steering Drawbar"/>
-        <text name="UNLOCK_STEERING_DRAWBAR" text="Unlock Steering Drawbar"/>
-        <text name="INPUT_TOGGLE_LOCK_STEERING_AXLE" text="Lock/Unlock Steering Axle/Drawbar"/>
+        <text name="input_TOGGLE_LOCK_STEERING_AXLE" text="Lock/Unlock Steering Axle"/>
     </texts>
 </l10n>

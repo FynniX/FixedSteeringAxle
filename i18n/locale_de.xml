@@ -4,8 +4,6 @@
     <texts>
         <text name="LOCK_STEERING_AXLE" text="Lenkachse sperren"/>
         <text name="UNLOCK_STEERING_AXLE" text="Lenkachse entsperren"/>
-        <text name="LOCK_STEERING_DRAWBAR" text="Lenkdeichsel sperren"/>
-        <text name="UNLOCK_STEERING_DRAWBAR" text="Lenkdeichsel entsperren"/>
-        <text name="INPUT_TOGGLE_LOCK_STEERING_AXLE" text="Lenkachse/-deichsel ent-/sperren"/>
+        <text name="input_TOGGLE_LOCK_STEERING_AXLE" text="Lenkachse ent-/sperren"/>
     </texts>
 </l10n>

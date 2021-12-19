@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="61">
-    <author>Fynn Haupt</author>
+    <author>FynniX</author>
     <version>1.0.0.0</version>
 
     <title>
@@ -28,13 +28,13 @@
     </extraSourceFiles>
 
     <actions>
-        <action name="TOGGLE_LOCK_STEERING_AXLE" category="VEHICLE" ignoreComboMask="FALSE"/>
+        <action name="TOGGLE_LOCK_STEERING_AXLE" axisType="HALF"/>
     </actions>
 
     <inputBinding>
         <actionBinding action="TOGGLE_LOCK_STEERING_AXLE">
-            <binding device="KB_MOUSE_DEFAULT" input="KEY_comma" axisComponent="+" neutralInput="0" index="1"/>
-            <binding device="GAMEPAD_DEFAULT" input="BUTTON_5 BUTTON_18" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_comma"/>
+            <binding device="GAMEPAD_DEFAULT" input="BUTTON_5 BUTTON_18"/>
         </actionBinding>
     </inputBinding>
 </modDesc>
