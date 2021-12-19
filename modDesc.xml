@@ -10,10 +10,18 @@
 
     <description>
         <en>
-        <![CDATA[With this mod you can lock and unlock your steering axle]]>
+        <![CDATA[
+        With this mod you can lock and unlock your steering axle.
+        
+        I will publish this mod in open source. The Github Repository is at: https://github.com/FynniX/LockSteeringAxle
+        ]]>
         </en>
         <de>
-        <![CDATA[Mit dieser Mod kannst du deine Lenkachse sperren und entsperren]]>
+        <![CDATA[
+        Mit dieser Mod kannst du deine Lenkachse sperren und entsperren
+        
+        Ich veröffentliche diese Mod als Open Source. Die Github Repository findet ihr auf: https://github.com/FynniX/LockSteeringAxle
+        ]]>
         </de>
     </description>
 
