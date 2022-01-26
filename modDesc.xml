@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="61">
+<modDesc descVersion="63">
     <author>FynniX</author>
-    <version>1.0.0.0</version>
+    <version>1.0.0.0</version>f
 
     <title>
         <en>Lock Steering Axle</en>
-        <de>Lenkachse sperren</de>
+        <de>Lenkachse Sperren</de>
     </title>
 
     <description>
         <en>
-        <![CDATA[
-        With this mod you can lock and unlock your steering axle.
-        
-        I will publish this mod in open source. The Github Repository is at: https://github.com/FynniX/LockSteeringAxle
-        ]]>
+            <![CDATA[With this mod you can lock and unlock your steering axle.
+
+            I will publish this mod in open source. The Github Repository is at: https://github.com/FynniX/LockSteeringAxle
+            ]]>
         </en>
         <de>
-        <![CDATA[
-        Mit dieser Mod kannst du deine Lenkachse sperren und entsperren
-        
-        Ich veröffentliche diese Mod als Open Source. Die Github Repository findet ihr auf: https://github.com/FynniX/LockSteeringAxle
-        ]]>
+            <![CDATA[Mit dieser Mod kannst du deine Lenkachse sperren und entsperren.
+
+            Ich veröffentliche diese Mod als Open Source. Die Github Repository findet ihr auf: https://github.com/FynniX/LockSteeringAxle
+            ]]>
         </de>
     </description>
 
@@ -41,7 +39,7 @@
 
     <inputBinding>
         <actionBinding action="TOGGLE_LOCK_STEERING_AXLE">
-            <binding device="KB_MOUSE_DEFAULT" input="KEY_comma"/>
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_HASHTAG"/>
             <binding device="GAMEPAD_DEFAULT" input="BUTTON_5 BUTTON_18"/>
         </actionBinding>
     </inputBinding>
